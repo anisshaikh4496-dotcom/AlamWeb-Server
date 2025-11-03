@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{% block title %}Alamweb.in — Portfolio{% endblock %}</title>
+
+<!-- Tailwind CDN -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Custom Tailwind config (optional) -->
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+cyanCustom: '#22D3EE'
+}
+}
+}
+}
+</script>
+
+<!-- GSAP with fallback -->
+<script>
+  // GSAP loading status tracker
+  window.gsapLoaded = {
+    core: false,
+    scrollTrigger: false,
+    scrollTo: false
+  };
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" 
+        onload="window.gsapLoaded.core = true;"
+        onerror="console.error('Failed to load GSAP core');">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        onload="window.gsapLoaded.scrollTrigger = true;"
+        onerror="console.error('Failed to load ScrollTrigger plugin');">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+        onload="window.gsapLoaded.scrollTo = true;"
+        onerror="console.error('Failed to load ScrollTo plugin');">
+</script>
+
+<!-- Local CSS -->
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+{% block head %}{% endblock %}
+
+</head>
+
+<body class="bg-gray-950 text-gray-100 antialiased">
+
+<!-- Fullscreen Preloader -->
+<div id="preloader" class="fixed inset-0 z-[2000] flex items-center justify-center bg-gradient-to-br from-gray-900/95 to-gray-950/95">
+<div class="flex flex-col items-center gap-4">
+<div class="relative w-28 h-28">
+<div class="absolute inset-0 rounded-full border-4 border-cyanCustom/25 animate-spin-slower"></div>
+<div class="absolute inset-4 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-glow">
+<!-- small logo -->
+<svg class="w-10 h-10 text-cyanCustom" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+</svg>
+</div>
+</div>
+<p class="text-lg text-gray-400 font-medium">Loading AlamWeb.in...</p>
+</div>
+</div>
+
+<!-- Debug info for loading status -->
+<!-- debug-info removed for production; kept in code earlier for troubleshooting -->
+
+{% block content %}{% endblock %}
+
+<!-- Local JS -->
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

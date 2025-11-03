@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+{% block title %}Alamweb.in — Full Stack Developer & AI Specialist{% endblock %}
+
+{% block content %}
+
+<!-- top nav -->
+
+<nav id="main-header" class="fixed w-full z-50 top-0 backdrop-blur bg-gray-900/60 border-b border-gray-800 transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<a href="#hero" class="flex items-center gap-2 text-2xl font-extrabold">
+<svg class="w-8 h-8 text-cyanCustom" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+<span class="font-mono inline-flex"><span>Alam</span><span class="text-cyanCustom">_Web</span></span>
+</a>
+
+  <div class="hidden md:flex items-center gap-8 text-gray-300">
+    <a class="smooth-scroll hover:text-cyanCustom" href="#hero">Home</a>
+    <a class="smooth-scroll hover:text-cyanCustom" href="#projects">Projects</a>
+    <a class="smooth-scroll hover:text-cyanCustom" href="#expertise">Expertise</a>
+    <a class="smooth-scroll hover:text-cyanCustom" href="#about">About</a>
+    <a class="smooth-scroll hover:text-cyanCustom" href="#contact">Contact</a>
+    
+    <!-- THEME TOGGLE BUTTON -->
+    <button id="theme-toggle" class="p-2 rounded-full text-xl hover:bg-gray-700 transition duration-150">
+      <svg id="theme-icon" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+         <!-- Initial icon path set by JS on load -->
+         <path d="M21.64 13.65A9 9 0 1110.35 2.36a1 1 0 00-.35.79 1 1 0 00.95.89c.81 0 1.55.28 2.14.77a7.001 7.001 0 001.99 3.23A7.001 7.001 0 0017 17a7.001 7.001 0 002.77-.54 1 1 0 00.89.95 1 1 0 00.79-.35z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <div class="flex items-center md:hidden">
+    <!-- THEME TOGGLE FOR MOBILE -->
+    <button id="theme-toggle-mobile" class="p-2 rounded-full text-xl text-gray-300 hover:bg-gray-700 transition duration-150 mr-2">
+        <svg id="theme-icon-mobile" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+           <path d="M21.64 13.65A9 9 0 1110.35 2.36a1 1 0 00-.35.79 1 1 0 00.95.89c.81 0 1.55.28 2.14.77a7.001 7.001 0 001.99 3.23A7.001 7.001 0 0017 17a7.001 7.001 0 002.77-.54 1 1 0 00.89.95 1 1 0 00.79-.35z"/>
+        </svg>
+    </button>
+    <button id="menu-button" class="menu-icon md:hidden p-2 text-gray-300 hover:bg-gray-700 transition duration-150" aria-expanded="false">
+        <span class="bar-one"></span>
+        <span class="bar-two"></span>
+        <span class="bar-three"></span>
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+<!-- Mobile Menu Links -->
+
+<div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-gray-800" style="height: 0;">
+<a class="mobile-link block py-3 px-6 text-gray-300 hover:bg-gray-800 smooth-scroll" href="#hero">Home</a>
+<a class="mobile-link block py-3 px-6 text-gray-300 hover:bg-gray-800 smooth-scroll" href="#projects">Projects</a>
+<a class="mobile-link block py-3 px-6 text-gray-300 hover:bg-gray-800 smooth-scroll" href="#expertise">Expertise</a>
+<a class="mobile-link block py-3 px-6 text-gray-300 hover:bg-gray-800 smooth-scroll" href="#about">About</a>
+<a class="mobile-link block py-3 px-6 text-cyanCustom font-bold bg-gray-800 smooth-scroll" href="#contact">Contact Me</a>
+</div>
+</nav>
+
+<!-- site content wrapper to fade in after preloader -->
+
+<div id="site-content" class="opacity-0 min-h-screen"><!-- opacity-0 only, let JS handle visibility -->
+
+<!-- HERO SECTION -->
+
+<section id="hero" class="pt-32 pb-20 md:pt-40 md:pb-32 relative text-center md:text-left overflow-hidden">
+<!-- Particles canvas will go here -->
+<canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-30"></canvas>
+
+<div class="relative max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+  <div class="md:w-1/2">
+    <p class="text-xl md:text-2xl text-cyanCustom mb-3" data-scroll-fade>Thanks for visiting my website</p>
+    <h1 class="text-5xl md:text-7xl font-extrabold text-gray-100 mb-4 leading-tight" data-scroll-fade data-scroll-delay="0.1">
+      AlamWeb <span class="text-cyanCustom block md:inline-block">Full Stack Developer</span>
+    </h1>
+    <p class="text-2xl md:text-3xl text-gray-400 mb-8 font-light" data-scroll-fade data-scroll-delay="0.2">
+      Building the <span class="typing-target font-semibold text-gray-200"></span>
+    </p>
+    
+    <div class="flex justify-center md:justify-start gap-4" data-scroll-fade data-scroll-delay="0.3">
+      <a href="#contact" class="bg-cyanCustom text-gray-900 px-8 py-4 rounded-full font-bold shadow-lg shadow-cyanCustom/30 hover:shadow-cyanCustom/50 transition duration-300 hover:scale-[1.03] smooth-scroll">
+        Hire Me
+      </a>
+      <a href="#projects" class="border-2 border-gray-700 text-gray-300 px-8 py-4 rounded-full font-medium hover:border-cyanCustom hover:text-cyanCustom transition duration-300 smooth-scroll">
+        See Projects
+      </a>
+    </div>
+  </div>
+  
+  <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-scroll-fade data-scroll-delay="0.4">
+    <div class="w-64 h-64 md:w-80 md:h-80 relative">
+      <img src="static/IMG/profile.jpg" alt="Alam Profile" class="rounded-full object-cover w-full h-full border-4 border-cyanCustom shadow-2xl shadow-cyanCustom/50">
+      <!-- Animated Ring -->
+      <div class="absolute inset-0 rounded-full border-8 border-cyanCustom/20 animate-spin-slow"></div>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+<!-- PROJECTS SECTION -->
+
+<section id="projects" class="py-20 md:py-32 bg-gray-900">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<h2 class="text-4xl md:text-5xl font-extrabold text-center text-gray-100 mb-4" data-scroll-fade>Recent Projects</h2>
+<p class="text-xl text-center text-gray-400 mb-16" data-scroll-fade data-scroll-delay="0.1">Great work, built with modern techniques.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- Project Card 1 -->
+    <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700 transform hover:scale-[1.02] transition duration-300" data-scroll-fade>
+      <img src="https://placehold.co/600x400/1e293b/ffffff?text=AI+Dashboard" alt="Project 1" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <span class="text-sm font-semibold text-cyanCustom">AI/ML & Python</span>
+        <h3 class="text-2xl font-bold text-gray-100 mt-1 mb-2">Predictive Analytics Platform</h3>
+  <p class="text-gray-400">Scalable predictive models and real-time data visualization for complex datasets.</p>
+      </div>
+    </div>
+    
+    <!-- Project Card 2 -->
+    <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700 transform hover:scale-[1.02] transition duration-300" data-scroll-fade data-scroll-delay="0.1">
+      <img src="https://placehold.co/600x400/374151/ffffff?text=E-commerce+Frontend" alt="Project 2" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <span class="text-sm font-semibold text-cyanCustom">React & Node.js</span>
+        <h3 class="text-2xl font-bold text-gray-100 mt-1 mb-2">High-Performance E-commerce</h3>
+  <p class="text-gray-400">Built on Jamstack for a fast, SEO-friendly e-commerce storefront.</p>
+      </div>
+    </div>
+    
+    <!-- Project Card 3 -->
+    <div class="project-card bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700 transform hover:scale-[1.02] transition duration-300" data-scroll-fade data-scroll-delay="0.2">
+      <img src="https://placehold.co/600x400/4b5563/ffffff?text=Mobile+App+Concept" alt="Project 3" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <span class="text-sm font-semibold text-cyanCustom">Vue.js & Firestore</span>
+        <h3 class="text-2xl font-bold text-gray-100 mt-1 mb-2">Cross-Platform Productivity App</h3>
+  <p class="text-gray-400">Mobile-first productivity tool with real-time sync and offline support.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center mt-16" data-scroll-fade data-scroll-delay="0.3">
+    <a href="#contact" class="border-2 border-cyanCustom text-cyanCustom px-8 py-3 rounded-full font-medium hover:bg-cyanCustom hover:text-gray-900 transition duration-300 smooth-scroll">
+  See More Work
+    </a>
+  </div>
+</div>
+
+
+</section>
+
+<!-- EXPERTISE SECTION -->
+
+<section id="expertise" class="py-20 md:py-32 bg-gray-950">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<h2 class="text-4xl md:text-5xl font-extrabold text-center text-gray-100 mb-4" data-scroll-fade>My Expertise</h2>
+<p class="text-xl text-center text-gray-400 mb-16" data-scroll-fade data-scroll-delay="0.1">A powerful combination of Full-stack, Data, and AI.</p>
+
+  <!-- Tech Stack Badges -->
+  <div class="flex flex-wrap justify-center gap-4 mb-16" data-scroll-fade data-scroll-delay="0.2">
+    <span class="bg-gray-800 text-cyanCustom px-4 py-1 rounded-full text-sm font-medium border border-cyanCustom">Python</span>
+    <span class="bg-gray-800 text-cyanCustom px-4 py-1 rounded-full text-sm font-medium border border-cyanCustom">TensorFlow / PyTorch</span>
+    <span class="bg-gray-800 text-cyanCustom px-4 py-1 rounded-full text-sm font-medium border border-cyanCustom">React / Vue</span>
+    <span class="bg-gray-800 text-cyanCustom px-4 py-1 rounded-full text-sm font-medium border border-cyanCustom">Node.js / Express</span>
+    <span class="bg-gray-800 text-cyanCustom px-4 py-1 rounded-full text-sm font-medium border border-cyanCustom">MongoDB / PostgreSQL</span>
+    <span class="bg-gray-800 text-cyanCustom px-4 py-1 rounded-full text-sm font-medium border border-cyanCustom">Cloud (AWS/GCP)</span>
+  </div>
+
+  <!-- Skills Progress -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Skill 1 -->
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800" data-scroll-fade>
+      <h3 class="text-xl font-semibold text-gray-100 mb-3">Front-end Development (95%)</h3>
+      <div class="w-full bg-gray-800 rounded-full h-3">
+        <div class="skill-fill bg-cyanCustom h-3 rounded-full" data-skill-level="95"></div>
+      </div>
+    </div>
+    <!-- Skill 2 -->
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800" data-scroll-fade data-scroll-delay="0.1">
+      <h3 class="text-xl font-semibold text-gray-100 mb-3">Back-end Development (90%)</h3>
+      <div class="w-full bg-gray-800 rounded-full h-3">
+        <div class="skill-fill bg-cyanCustom h-3 rounded-full" data-skill-level="90"></div>
+      </div>
+    </div>
+    <!-- Skill 3 -->
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800" data-scroll-fade data-scroll-delay="0.2">
+      <h3 class="text-xl font-semibold text-gray-100 mb-3">AI & Machine Learning (85%)</h3>
+      <div class="w-full bg-gray-800 rounded-full h-3">
+        <div class="skill-fill bg-cyanCustom h-3 rounded-full" data-skill-level="85"></div>
+      </div>
+    </div>
+    <!-- Skill 4 -->
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800" data-scroll-fade data-scroll-delay="0.3">
+      <h3 class="text-xl font-semibold text-gray-100 mb-3">DevOps & Cloud (80%)</h3>
+      <div class="w-full bg-gray-800 rounded-full h-3">
+        <div class="skill-fill bg-cyanCustom h-3 rounded-full" data-skill-level="80"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+
+<section id="testimonials" class="py-20 md:py-32 bg-gray-900">
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+<h2 class="text-4xl md:text-5xl font-extrabold text-center text-gray-100 mb-4" data-scroll-fade>Client Feedback</h2>
+<p class="text-xl text-center text-gray-400 mb-16" data-scroll-fade data-scroll-delay="0.1">What clients say.</p>
+
+  <div id="testimonial-carousel" class="relative max-w-3xl mx-auto">
+    <!-- Testimonial Item 1 (Active) -->
+    <div class="testi-item p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-700 relative text-center" data-testimonial-id="0">
+      <svg class="w-12 h-12 text-cyanCustom opacity-30 mx-auto mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+  <p class="text-xl italic text-gray-300 mb-6">"Alam's expertise and on-time delivery took our project to the next level. His AI solution proved to be a game-changer for our business."</p>
+      <div class="text-gray-100 font-semibold">- Rahul Sharma, CTO</div>
+      <div class="text-sm text-gray-500">Tech Innovators Pvt. Ltd.</div>
+    </div>
+
+    <!-- Testimonial Item 2 (Hidden) -->
+    <div class="testi-item p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-700 relative text-center absolute top-0 left-0 w-full" data-testimonial-id="1" style="opacity: 0; transform: translateX(100%);">
+      <svg class="w-12 h-12 text-cyanCustom opacity-30 mx-auto mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+  <p class="text-xl italic text-gray-300 mb-6">"Handling a complex data migration with such ease was remarkable. Alam is a true full-stack problem solver."</p>
+      <div class="text-gray-100 font-semibold">- Priya Singh, Product Manager</div>
+      <div class="text-sm text-gray-500">Global Data Solutions</div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <button id="prev-testi" class="absolute top-1/2 left-0 transform -translate-y-1/2 -ml-12 p-3 bg-gray-700 rounded-full text-cyanCustom hover:bg-gray-600 transition duration-300 hidden md:block">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button id="next-testi" class="absolute top-1/2 right-0 transform -translate-y-1/2 -mr-12 p-3 bg-gray-700 rounded-full text-cyanCustom hover:bg-gray-600 transition duration-300 hidden md:block">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</div>
+
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section id="contact" class="py-20 md:py-32 bg-gray-950">
+<div class="max-w-xl mx-auto px-6 lg:px-8 bg-gray-900 p-8 rounded-xl shadow-2xl border border-gray-800" data-scroll-fade>
+<h2 class="text-4xl font-extrabold text-center text-gray-100 mb-4">Let's Connect</h2>
+<p class="text-lg text-center text-gray-400 mb-8">Get in touch to start your project.</p>
+
+  <!-- Contact success message (shown after AJAX submit) -->
+  <div id="contact-success" class="hidden text-green-400 text-center mb-4"></div>
+
+  <form id="contact-form" class="space-y-4">
+    <input type="text" name="name" class="bg-gray-950 p-3 rounded border border-gray-700 w-full" placeholder="Your Name" required>
+    <input type="email" name="email" class="bg-gray-950 p-3 rounded border border-gray-700 w-full" placeholder="Your Email" required>
+    <textarea name="message" class="bg-gray-950 p-3 rounded border border-gray-700 w-full" rows="5" placeholder="Message"></textarea>
+    <div class="mt-4 text-right">
+      <button type="submit" class="bg-cyanCustom text-gray-900 px-6 py-3 rounded-full font-semibold hover:scale-105 transition">Send</button>
+    </div>
+  </form>
+</div>
+
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="py-8 text-center text-sm text-gray-500">
+© 2025 Alamweb.in • Building the future with AI
+</footer>
+
+<!-- CHAT WIDGET (UI only) -->
+
+
+<div id="chat-widget" class="fixed right-6 bottom-6 z-50">
+<button id="chat-toggle" class="bg-cyanCustom text-gray-900 px-4 py-3 rounded-full shadow-lg">Chat</button>
+
+<div id="chat-panel" class="hidden mt-3 w-80 bg-gray-900/95 border border-gray-700 rounded-xl p-4 shadow-xl">
+  <div class="flex items-center justify-between mb-3">
+    <div class="text-sm font-semibold">Ask Alam AI</div>
+    <button id="chat-close" class="text-gray-400 hover:text-gray-200">✕</button>
+  </div>
+  <div id="chat-log" class="h-64 overflow-y-auto space-y-3 p-2 text-sm bg-gray-950 rounded border border-gray-700 mb-3">
+    <!-- Messages will go here -->
+    <div class="text-cyanCustom">AI: Hello! How can I assist you with your project today?</div>
+  </div>
+  <!-- CHAT FORM ADDED -->
+  <form id="chat-form" class="mt-2">
+    <div class="flex gap-2">
+      <input type="text" id="chat-input" class="w-full bg-gray-800 p-2 rounded text-gray-100 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-cyanCustom" placeholder="Type a message..." required>
+      <button type="submit" id="chat-send" class="bg-cyanCustom text-gray-900 px-4 rounded font-semibold hover:bg-cyan-300 transition-colors">
+        Send
+      </button>
+    </div>
+</div>
+</div>
+{% endblock %}
